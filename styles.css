@@ -77,8 +77,8 @@ main {
 .wordmark {
   margin: 0;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-weight: 500;      /* wide tracking wants lighter weight */
+  letter-spacing: 0.24em; /* em, not rem: tracks this element's own size */
   text-transform: uppercase;
   color: var(--ink);
 }
