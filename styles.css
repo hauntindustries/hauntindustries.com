@@ -1,6 +1,6 @@
-/* Haunt Industries — v21: v14's copy and structure, set to the style
-   guide (haunt-styleguide/): dark-only, Hauntserrat four weights,
-   rose-numbered eyebrows, ruled two-ended footer, rose spent sparingly. */
+/* Haunt Industries — v21 (LIVE at hauntindustries.com). Style-guide
+   system, minimalist cut: dark-only, Hauntserrat four weights, ruled
+   two-ended footer, rose spent on the one button. */
 
 @font-face {
   font-family: 'Hauntserrat';
@@ -85,12 +85,6 @@ main {
    zero it on the pair so the f_t ligature can form. */
 .lead .lig { letter-spacing: normal; }
 
-.meta {
-  margin: 1.5rem 0 0;
-  font-size: 0.9375rem;
-  color: var(--muted);
-}
-
 .intro {
   margin: 3rem 0 0;
   max-width: 58ch;
@@ -106,22 +100,6 @@ main {
 /* Sections ------------------------------------------------------------ */
 
 section { margin-top: 4.25rem; }
-
-.eyebrow {
-  margin: 0 0 0.875rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.num {
-  color: var(--tint);
-  font-weight: 600;
-  margin-right: 0.75em;
-  letter-spacing: 0.14em;
-}
 
 .body { margin: 0; font-size: 1rem; }
 
