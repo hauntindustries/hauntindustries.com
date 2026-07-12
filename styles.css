@@ -1,76 +1,44 @@
-/* Haunt Industries — hauntindustries.com. Automatic light/dark.
-   Fonts self-hosted: Montserrat (SIL OFL) 400-600 variable, and a
-   modified Montserrat Bold with added discretionary ligatures, renamed
-   "Hauntserrat" per the OFL Reserved Font Name clause. */
-
-/* Type ---------------------------------------------------------------- */
+/* Haunt Industries — v21: v14's copy and structure, set to the style
+   guide (haunt-styleguide/): dark-only, Hauntserrat four weights,
+   rose-numbered eyebrows, ruled two-ended footer, rose spent sparingly. */
 
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Hauntserrat';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src: url('fonts/hauntserrat-latin-400.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Hauntserrat';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
   src: url('fonts/hauntserrat-latin-500.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Hauntserrat';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
   src: url('fonts/hauntserrat-latin-600.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
-
 @font-face {
-  font-family: 'Montserrat';
+  font-family: 'Hauntserrat';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
   src: url('fonts/hauntserrat-latin-700.woff2') format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
-    U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
-    U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 :root {
-  color-scheme: light dark;
-
-  --bg: #FBFBFD;
-  --surface: #FFFFFF;
-  --ink: #1D1D1F;
-  --muted: #6E6E73;
-  --hair: #D2D2D7;
-  --tint: #A5624F;
-  --on-tint: #FFFFFF;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #000000;
-    --surface: #161617;
-    --ink: #F5F5F7;
-    --muted: #86868B;
-    --hair: #424245;
-    --tint: #E0A89A;
-    --on-tint: #1D1D1F;
-  }
+  --bg: #000000;
+  --surface: #161617;
+  --ink: #F5F5F7;
+  --muted: #86868B;
+  --hair: #2E2E30;
+  --tint: #E0A89A;
+  --on-tint: #1D1D1F;
 }
 
 * { box-sizing: border-box; }
@@ -81,9 +49,8 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  font: 400 16px/1.6 'Montserrat', 'Gotham', 'Avenir Next', 'Futura',
+  font: 400 16px/1.6 'Hauntserrat', 'Gotham', 'Avenir Next', 'Futura',
     Helvetica, Arial, sans-serif;
-  letter-spacing: normal;
   font-variant-ligatures: common-ligatures discretionary-ligatures;
   -webkit-font-smoothing: antialiased;
 }
@@ -91,7 +58,7 @@ body {
 main {
   max-width: 692px;
   margin: 0 auto;
-  padding: clamp(4rem, 12vh, 7.5rem) 22px 0;
+  padding: clamp(4rem, 12vh, 7.5rem) 24px 0;
 }
 
 /* Header ------------------------------------------------------------- */
@@ -99,14 +66,14 @@ main {
 .wordmark {
   margin: 0;
   font-size: 0.75rem;
-  font-weight: 500;      /* wide tracking wants lighter weight */
-  letter-spacing: 0.24em; /* em, not rem: tracks this element's own size */
+  font-weight: 500;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--ink);
 }
 
 .lead {
-  margin: 1.75rem 0 0;
+  margin: 2.5rem 0 0;
   font-size: clamp(2.75rem, 1.55rem + 5.2vw, 4.25rem);
   font-weight: 700;
   line-height: 1.05;
@@ -118,30 +85,25 @@ main {
    zero it on the pair so the f_t ligature can form. */
 .lead .lig { letter-spacing: normal; }
 
+.meta {
+  margin: 1.5rem 0 0;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
 .intro {
-  margin: 2rem 0 0;
+  margin: 3rem 0 0;
   max-width: 58ch;
   font-size: 1.125rem;
   color: var(--ink);
 }
 
-/* Structure ---------------------------------------------------------- */
+/* Sections ------------------------------------------------------------ */
 
-.note {
-  margin: 0.5rem 0 0;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--muted);
-}
+section { margin-top: 4.25rem; }
 
-.waitlist-section,
-.contact {
-  margin-top: 3rem;
-}
-
-.waitlist-section h2,
-.contact h2 {
-  margin: 0 0 0.75rem;
+.eyebrow {
+  margin: 0 0 0.875rem;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -149,7 +111,23 @@ main {
   color: var(--muted);
 }
 
-/* Controls ----------------------------------------------------------- */
+.num {
+  color: var(--tint);
+  font-weight: 600;
+  margin-right: 0.75em;
+  letter-spacing: 0.14em;
+}
+
+.body { margin: 0; font-size: 1rem; }
+
+/* Waitlist ------------------------------------------------------------- */
+
+.note {
+  margin: 0.5rem 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--muted);
+}
 
 .wl-cta { margin: 1.25rem 0 0.75rem; }
 
@@ -181,17 +159,7 @@ main {
   border-radius: 980px;
 }
 
-/* Contact ------------------------------------------------------------ */
-
-.contact p {
-  margin: 0;
-  line-height: 1.9;
-}
-
-.contact .biz {
-  color: var(--muted);
-  font-size: 0.875rem;
-}
+/* Links ----------------------------------------------------------------- */
 
 a {
   color: var(--tint);
@@ -199,10 +167,7 @@ a {
   transition: color 0.15s ease;
 }
 
-a:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 a:focus-visible {
   outline: 2px solid var(--tint);
@@ -210,15 +175,17 @@ a:focus-visible {
   border-radius: 3px;
 }
 
-/* Footer ------------------------------------------------------------- */
-/* Body-level sibling of <main> so it lands the contentinfo landmark;
-   mirrors main's column so the layout holds. */
+/* Footer ----------------------------------------------------------------- */
 
 footer {
-  width: min(100% - 44px, 648px);
-  margin: 4rem auto 0;
-  padding: 1.5rem 0 3.5rem;
+  width: min(100% - 48px, 644px);
+  margin: 5rem auto 0;
+  padding: 1.25rem 0 3.5rem;
   border-top: 1px solid var(--hair);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
   font-size: 0.75rem;
   line-height: 1.5;
   color: var(--muted);
